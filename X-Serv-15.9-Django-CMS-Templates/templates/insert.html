@@ -1,0 +1,23 @@
+<html>
+<body>
+	<p> 
+		<font color="green">
+			You're logged as {{ user }}. <a href="/logout/"> Logout </a>
+		</font>
+	</p>
+	<form method="post" action="/annotated/content/insert/form/">
+	{% csrf_token %}
+		<table>
+			<tr>
+				<td> Key: </td>
+				<td><input type="text" name="key" /></td>
+			</tr>
+			<tr>
+				<td>Value: </td>
+				<td><input type="text" name="value" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<style>
+body {
+	background-image: url('http://i.imgur.com/FBvUZog.png')
+}
+</style>
+<body>
+	<button type="button">
+		<a href='/admin/'>Admin</a>
+	</button>
+	<button type="button">
+		<a href='/'>Menu</a>
+	</button>
+	<form action="" method="POST">
+	{% csrf_token %}
+		<img src='http://i.imgur.com/GNmhHrL.png' alt='urlshortener' border='0' align='middle'>
+		<div style="margin: 250px auto; width: 300px; position:absolute; left: 200px; top: 0px">
+			<table>
+				<td> URL: </td>
+				<td><input type="text" name="url" autocomplete="off"/></td>
+			</table>
+			<input type="submit" value="Submit" />
+		</div>
+	</form><br><br>
+	
+	<div style="margin: 50px auto; width: 300px; position:absolute; left: 600px; top: 0px">
+		<p>
+			<font color='white'>
+				Lista de url ya acortadas:
+				<ul>
+					{{ lista | safe }}
+				</ul>
+			</font>
+		</p>
+	</div>
+</body>
+</html>
